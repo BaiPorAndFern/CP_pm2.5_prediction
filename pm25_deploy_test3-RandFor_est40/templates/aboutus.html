@@ -4,49 +4,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include the external stylesheet using url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>PM 2.5 Prediction with Machine Learning</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
-        }
-
-        header {
-            background-color: #08454c;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        nav {
-            background-color: #115e67;
-            text-align: center;
-        }
-
-        ul.menu-bar {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        ul.menu-bar li {
-            display: inline;
-            line-height: 40px; /* Adjust the height as needed */
-        }
-
-        ul.menu-bar li.active {
-            background-color: #FFD700; /* Highlight color */
-        }
-
-        ul.menu-bar li a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: bold;
-            margin: 0 20px;
-        }
-
         section {
             display: flex;
             justify-content: center;
@@ -55,7 +16,7 @@
         }
 
         .portfolio {
-            width: 500px;
+            width: 600px;
             text-align: center;
             background-color: #fff;
             padding: 20px;
@@ -82,7 +43,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: white;">
     <header>
         <h1>PM 2.5 Prediction with Machine Learning</h1>
     </header>
@@ -91,7 +52,7 @@
             <li><a href="/">PM2.5</a></li>
             <li><a href="/prediction">Prediction</a></li>
             <li><a href="/ourdata">Our Data</a></li>
-            <li><a href="/aboutus">About Us</a></li>
+            <li class="{% if current_page == 'aboutus' %}active{% endif %}"><a href="/aboutus">About Us</a></li>
         </ul>
     </nav>
     <section>
@@ -112,6 +73,7 @@
                 Asian Institute of Technology <br>
                 Pathum Thani, Thailand <br>
                 st123300@ait.asia<br>
+                <a href="https://github.com/BaiPorAndFern/CP_pm2.5_prediction" style="color: black;">Project Github Repository</a>
             </div>
         </div>
 
@@ -125,12 +87,14 @@
                 Asian Institute of Technology <br>
                 Pathum Thani, Thailand <br>
                 st124087@ait.asia<br>
+                <a href="https://github.com/Kyi1914/ait_2023_CPDSAI/tree/main/group7-PM2.5Project" style="color: black;">Project Github Repository</a>
             </div>
+            
         </div>
     </section>
 
     <!-- Footer section -->
-    <footer style="background-color: #333; color: #fff; text-align: center; padding: 10px;">
+    <footer class = "footer">
         &copy; 2023 CP for DSAI Class Asian Institute of Technology. All rights reserved.
     </footer>
     
